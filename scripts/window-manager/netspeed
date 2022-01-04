@@ -1,0 +1,6 @@
+#! /bin/bash
+case $BLOCK_BUTTON in
+    1)kitty -e nmtui;;
+    3)notify-send "This is the Download and Upload Speed";;
+esac
+netspeed

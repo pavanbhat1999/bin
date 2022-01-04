@@ -1,0 +1,7 @@
+#!/bin/bash
+# echo -e "default-agent\npower on\nconnect E4:41:22:92:3E:17\n" | bluetoothctl
+bluetoothctl -- default-agent
+sleep 2
+bluetoothctl -- power on
+sleep 2
+bluetoothctl -- connect E4:41:22:92:3E:17

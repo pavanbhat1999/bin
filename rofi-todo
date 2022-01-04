@@ -1,0 +1,16 @@
+#!/bin/bash
+main() {
+    value=$(cat $HOME/.cache/todo | rofi -dmenu -p "TODO" -font 'Fira Code 18' )
+    if [[ ! $value ]]; then
+        exit
+    fi
+    if grep -Fxq "$value" $HOME/.cache/todo
+    then
+        sed -i "/$value/d" $HOME/.cache/todo
+        notify-send -u critical "Deleted selected Reminder"
+    else
+        echo $value >> $HOME/.cache/todo
+        notify-send "🔔 New Reminder Added"
+    fi
+}
+main

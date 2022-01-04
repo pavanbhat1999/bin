@@ -1,0 +1,6 @@
+#! /bin/bash 
+case $BLOCK_BUTTON in
+    1) dte="$(date +"%a, %B %d %l:%M%p"| sed 's/  / /g')" ; notify-send "$dte";
+esac
+dte="$(date +"%l:%M%p"| sed 's/  / /g')"
+echo -e "$dte"
