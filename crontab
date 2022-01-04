@@ -1,0 +1,1 @@
+* * * * *  XDG_RUNTIME_DIR=/run/user/$(id -u) sh $HOME/bin/scripts/battery_notification.sh
