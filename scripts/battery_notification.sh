@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 STATUS=$(cat /sys/class/power_supply/BAT0/status)
 CURRENT_BAT=$(cat /sys/class/power_supply/BAT0/capacity)
-UPPER_LIMIT=60
+UPPER_LIMIT=85
 LOWER_LIMIT=30
 if [ "$STATUS" = "Charging" ]; then
     echo 'Charging'
@@ -12,7 +12,7 @@ if [ "$STATUS" = "Charging" ]; then
 else
     echo "Not Charging"
     if [ $CURRENT_BAT -gt $LOWER_LIMIT ]
-    then 
+    then
         echo 'Optimum Charge'
     fi
     if [ $CURRENT_BAT -lt $LOWER_LIMIT ]

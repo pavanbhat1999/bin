@@ -1,2 +1,3 @@
 #!/bin/bash
-nitrogen --set-auto --random $HOME/Downloads/Wall/
+# nitrogen --set-auto --no-recurse --random $HOME/Downloads/Wall/
+feh --bg-scale --randomize $HOME/Downloads/Wall/
