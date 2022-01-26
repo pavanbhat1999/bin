@@ -1,0 +1,13 @@
+#!/bin/sh
+menu () {
+    printf "Screenshot with delay\n"
+    printf "Screen clip\n"
+}
+choice=$(menu | dmenu -i -p "Choose an option")
+if [ "$choice" = "Screenshot with delay" ]; then
+    maim -d 2 | tee  $HOME/Downloads/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png | xclip -selection clipboard -t image/png
+elif [ "$choice" = "Screen clip" ]; then
+    maim -s | tee $HOME/Downloads/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`maim.png | xclip -selection clipboard -t image/png
+else
+    exit
+fi

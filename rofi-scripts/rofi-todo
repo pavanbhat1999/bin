@@ -7,10 +7,12 @@ main() {
     if grep -Fxq "$value" $HOME/.cache/todo
     then
         sed -i "/$value/d" $HOME/.cache/todo
-        notify-send -u critical "Deleted selected Reminder"
+        #copy $value to clipboard
+        echo $value | xclip -selection clipboard
+        notify-send -u critical "$value Deleted selected Reminder"
     else
         echo $value >> $HOME/.cache/todo
-        notify-send "🔔 New Reminder Added"
+        notify-send "$value 🔔 New Reminder Added"
     fi
 }
 main
