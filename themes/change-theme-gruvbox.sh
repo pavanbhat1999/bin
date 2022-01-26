@@ -10,4 +10,4 @@ cp $HOME/.config/nvim/vim-scripts/color-settings-gruvbox.vim $HOME/.config/nvim/
 #cp $HOME/.config/polybar.old/config_bspwm_gruvbox $HOME/.config/polybar.old/config
 #sh /home/root99/.config/polybar.old/launch.sh &
 # 5 GTK+--------------------------------------------------------------------------------------------
-cp $HOME/.config/gruvbox/settings.ini $HOME/.config/gtk-3.0/
+# cp $HOME/.config/gruvbox/settings.ini $HOME/.config/gtk-3.0/

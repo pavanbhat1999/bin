@@ -1,8 +1,0 @@
-#! /bin/bash
-case $BLOCK_BUTTON in
-    4) xbacklight +5 ;;
-    5) xbacklight -5 ;;
-esac
-icon=💡;
-bri="$(xbacklight | awk '{print int($1+0.5)}')";
-echo -e $icon$bri;

@@ -10,4 +10,4 @@ cp $HOME/.config/nvim/vim-scripts/color-settings-solarized.vim $HOME/.config/nvi
 #cp $HOME/.config/polybar.old/config_bspwm_solarized $HOME/.config/polybar.old/config
 #sh /home/root99/.config/polybar.old/launch.sh &
 # 5 GTK+  // small bug in pcmanfm-------------------------------------------------------------------
-cp $HOME/.config/solarized/settings.ini $HOME/.config/gtk-3.0/
+# cp $HOME/.config/solarized/settings.ini $HOME/.config/gtk-3.0/
