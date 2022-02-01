@@ -1,6 +1,6 @@
 #!/bin/bash
 main() {
-    value=$(cat $HOME/.cache/todo | rofi -dmenu -p "TODO" -font 'Fira Code 18' )
+    value=$(cat $HOME/.cache/todo | rofi -dmenu -p "TODO" -font 'Fira Code 18' -matching fuzzy -sort-method fzf )
     if [[ ! $value ]]; then
         exit
     fi

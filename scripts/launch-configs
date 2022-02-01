@@ -1,0 +1,17 @@
+#!/bin/sh
+menu () {
+    printf "1. Open Notes \n"
+    printf "2. Open awesomewm config\n"
+    printf "3. Open Screenshot folder\n"
+}
+choice=$(menu | dmenu -l 6 -i -p "Choose an option")
+# choice=$(menu | rofi -dmenu  -p "Choose an option" -font 'Fira Code 20')
+if [ "$choice" = "1. Open Notes " ]; then
+    kitty -e nvim $HOME/Downloads/vimwiki/index.wiki
+elif [ "$choice" = "2. Open awesomewm config" ]; then
+    kitty -e nvim $HOME/.config/awesome/rc.lua
+elif [ "$choice" = "3. Open Screenshot folder" ]; then
+    sxiv $HOME/Downloads/Pictures/
+else
+    exit
+fi
