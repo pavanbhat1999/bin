@@ -1,18 +1,16 @@
 #!/bin/bash
-main() {
-    value=$(cat $HOME/.cache/todo | rofi -dmenu -p "TODO" -font 'Fira Code 18' -matching fuzzy -sort-method fzf )
-    if [[ ! $value ]]; then
-        exit
-    fi
-    if grep -Fxq "$value" $HOME/.cache/todo
-    then
-        sed -i "/$value/d" $HOME/.cache/todo
-        #copy $value to clipboard
-        echo $value | xclip -selection clipboard
-        notify-send -u critical "$value Deleted selected Reminder"
-    else
-        echo $value >> $HOME/.cache/todo
-        notify-send "$value 🔔 New Reminder Added"
-    fi
-}
-main
+
+cat $HOME/.cache/daily-todo.txt >> $HOME/.cache/todo
+value=$(cat $HOME/.cache/todo | rofi -dmenu -p "TODO" -font 'Fira Code 18' -matching fuzzy -sort-method fzf )
+if [[ ! $value ]]; then
+    exit
+fi
+if grep -Fxq "$value" $HOME/.cache/todo
+then
+    sed -i "/$value/d" $HOME/.cache/todo
+    echo $value | xclip -selection clipboard
+    notify-send -u critical "$value Deleted selected Reminder"
+else
+    echo $value >> $HOME/.cache/todo
+    notify-send "$value 🔔 New Reminder Added"
+fi

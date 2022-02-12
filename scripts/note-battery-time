@@ -1,13 +1,17 @@
 #!/usr/bin/bash
 STATUS=$(cat /sys/class/power_supply/BAT0/status)
 CURRENT_BAT=$(cat /sys/class/power_supply/BAT0/capacity)
-UPPER_LIMIT=80
+UPPER_LIMIT=60
 LOWER_LIMIT=30
 if [ "$STATUS" = "Charging" ]; then
     echo 'Charging'
     if [ $CURRENT_BAT -gt $UPPER_LIMIT ]
     then
         notify-send "Charging Above given limit Please Unplug the Charger" -u critical
+        charger_stop_time=$(date +%s)
+        charger_stop_time >> note.txt
+        toatal_time=$(($charger_stop_time - $charger_start_time))
+        notify-send "Total Charging Time: $toatal_time" -u critical
     fi
 else
     echo "Not Charging"
@@ -18,5 +22,9 @@ else
     if [ $CURRENT_BAT -lt $LOWER_LIMIT ]
     then
         notify-send "Gone below Lower Limit. Charge Me Please" -u critical
+        #store the time when charger is started
+        charger_start_time=$(date +%s)
+        charger_start_time >> note.txt
+        notify-send "counting started" $charge_start_time
     fi
 fi

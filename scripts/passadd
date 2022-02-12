@@ -1,8 +1,0 @@
-#!/bin/bash
-
-choice=$(dmenu -i -p "Insert Password");
-if [[ ! $choice   ]]; then
-    notify-send "No Value";
-else
-    pass insert -e "$choice"
-fi

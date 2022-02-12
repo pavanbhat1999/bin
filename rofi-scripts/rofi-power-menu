@@ -1,18 +1,12 @@
 #!/bin/sh
 
-# add more args here according to preference
 
 notification(){
-# change the icon to whatever you want. Make sure your notification server 
-# supports it and already configured.
-
-# Now it will receive argument so the user can rename the radio title
-# to whatever they want
-
 	notify-send "Playing now: " "$@" --icon=media-tape
 }
 
 menu(){
+    printf "0. Sleep\n"
 	printf "1. Reboot\n"
 	printf "2. PowerOff\n"
 	printf "3. Lock\n"
@@ -22,6 +16,12 @@ main() {
 	choice=$(menu | rofi -dmenu | cut -d. -f1)
 
 	case $choice in
+        0)
+            notification "Sleeping in 10 seconds"
+            sleep 10
+            systemctl suspend
+            break
+            ;;
 		1)
             notification "Powering off in 10 seconds";
             sleep 20;

@@ -1,0 +1,29 @@
+#!/bin/sh
+menu () {
+    printf "0. Edit This Menu\n"
+    printf "1. Open Notes \n"
+    printf "2. Open Screenshot folder\n"
+    printf "3. Open awesomewm config\n"
+    printf "4. Open Xinitrc \n"
+    printf "5. Open Cs50 course in mpv"
+}
+open(){
+    kitty -e nvim $1
+}
+choice=$(menu | dmenu -l 6 -i -p "Choose an option")
+# choice=$(menu | rofi -dmenu  -p "Choose an option" -font 'Fira Code 20')
+if [ "$choice" = "1. Open Notes " ]; then
+    open $HOME/Downloads/vimwiki/index.wiki
+elif [ "$choice" = "2. Open Screenshot folder" ]; then
+    sxiv $HOME/Downloads/Pictures/
+elif [ "$choice" = "3. Open awesomewm config" ]; then
+    open $HOME/.config/awesome/rc.lua
+elif [ "$choice" = "4. Open Xinitrc " ]; then
+    open $HOME/.config/X11/xinitrc
+elif [[ "$choice" = "0. Edit This Menu" ]]; then
+    open /home/root99/bin/scripts/custom-menu
+elif [[ "$choice" = "5. Open Cs50 course in mpv" ]]; then
+    mpv $HOME/Downloads/Video/*
+else
+    exit
+fi
