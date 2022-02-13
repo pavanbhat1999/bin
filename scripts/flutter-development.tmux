@@ -4,7 +4,7 @@ tmux new -d -s flutter
 
 tmux rename-window -t 0 development
 tmux send-keys -t development "cd $HOME/Downloads/flutter/flutter_application_1/" ENTER
-tmux send-keys -t development "nvim " ENTER
+tmux send-keys -t development "nvim lib/main.dart" ENTER
 
 tmux neww -t flutter
 tmux rename-window -t 1 cli
