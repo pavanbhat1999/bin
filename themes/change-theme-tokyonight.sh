@@ -3,7 +3,7 @@
 cp $HOME/.config/kitty/kitty_tokyonight.conf $HOME/.config/kitty/kitty.conf
 killall -10 kitty
 # 2 Wallpaper---------------------------------------------------------------------------------------
-nitrogen --save --set-auto $HOME/Downloads/Wall/i_am_root2.jpg
+nitrogen --save --set-scaled $HOME/Downloads/tmpWall/onepiece.png
 # 3 vim---------------------------------------------------------------------------------------------
 cp $HOME/.config/nvim/vim-scripts/color-settings-tokyonight.vim $HOME/.config/nvim/vim-scripts/color-settings.vim
 # 4 polybar-----------------------------------------------------------------------------------------
