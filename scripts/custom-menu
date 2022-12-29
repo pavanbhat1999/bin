@@ -7,6 +7,7 @@ menu () {
     printf "4. Open Xinitrc \n"
     printf "5. Open Cs50 course in mpv\n"
     printf "6. Open Wallpaper Folder\n"
+    printf "7. Polybar Config Awesome WM\n"
 }
 open(){
     kitty -e nvim $1
@@ -27,6 +28,8 @@ elif [[ "$choice" = "5. Open Cs50 course in mpv" ]]; then
     mpv $HOME/Downloads/Video/*
 elif [[ "$choice" = "6. Open Wallpaper Folder" ]]; then
     sxiv $HOME/Downloads/tmpWall/*
+elif [[ "$choice" = "7. Polybar Config Awesome WM"  ]]; then
+    open /home/root99/.config/polybar.old/config_awesome
 fi
 else
     exit

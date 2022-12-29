@@ -11,5 +11,7 @@ export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
  wget -P $store_directory $image_url
 
 DISPLAY=:0 feh --bg-scale $store_directory$(basename $image_url)
+# DISPLAY=:0 nitrogen --save --set-auto $store_directory$(basename $image_url)
+# xwallpaper --zoom $store_directory$(basename $image_url)
 
 notify-send "Wallpaper changed"

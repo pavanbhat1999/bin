@@ -1,4 +1,6 @@
 #!/bin/bash
 
 # betterlockscreen -l blur --off 5
-slock
+# slock
+i3lock-fancy &
+systemctl suspend
