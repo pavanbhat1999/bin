@@ -10,3 +10,5 @@ tmux neww -t figlet
 tmux rename-window -t 1 test
 tmux send-keys -t test "cd $HOME/.config/nvim" ENTER
 tmux send-keys -t test "nvim --cmd 'set rtp+=/home/root99/.config/figlet.nvim' test.py" ENTER
+
+tmux attach-session
