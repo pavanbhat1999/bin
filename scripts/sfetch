@@ -1,0 +1,21 @@
+#!/bin/bash
+
+os=$(cat /etc/os-release | grep "^NAME=" | cut -d'"' -f2)
+kernel=$(uname -r)
+memory=$(free -h | awk '/^Mem:/ {print $3 "/" $2}')
+packages=$(pacman -Q | wc -l)
+upt=$(upt)
+
+echo -e "\e[31m██████╗  ██████╗  ██████╗ ████████╗██████╗  ██████╗ ██╗  ██╗"
+echo "██╔══██╗██╔═══██╗██╔═══██╗╚══██╔══╝██╔══██╗██╔═══██╗╚██╗██╔╝"
+echo "██████╔╝██║   ██║██║   ██║   ██║   ██████╔╝██║   ██║ ╚███╔╝ "
+echo "██╔══██╗██║   ██║██║   ██║   ██║   ██╔══██╗██║   ██║ ██╔██╗ "
+echo "██║  ██║╚██████╔╝╚██████╔╝   ██║   ██████╔╝╚██████╔╝██╔╝ ██╗"
+echo "╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝   ╚═════╝  ╚═════╝ ╚═╝  ╚═╝"
+echo ""
+
+echo "💻OS: $os"
+echo "🧵Kernel: $kernel"
+echo "💾Mem : $memory"
+echo "📦Pkgs: $packages"
+echo "⏰UpTime: $upt"

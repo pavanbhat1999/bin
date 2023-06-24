@@ -6,8 +6,10 @@ menu () {
 choice=$(menu | dmenu -i -p "Choose an option")
 if [ "$choice" = "Screenshot with delay" ]; then
     maim -d 2 | tee  $HOME/Downloads/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`.png | xclip -selection clipboard -t image/png
+    notify-send "Full screenshot captured Succcesfully and copied to clipboard"
 elif [ "$choice" = "Screen clip" ]; then
     maim -s | tee $HOME/Downloads/Pictures/screenshot-`/bin/date +%Y%m%d-%H:%M:%S`maim.png | xclip -selection clipboard -t image/png
+    notify-send "Screen Clip Captured and copied"
 else
     exit
 fi

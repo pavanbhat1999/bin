@@ -8,18 +8,20 @@ menu () {
     printf "5. Open Cs50 course in mpv\n"
     printf "6. Open Wallpaper Folder\n"
     printf "7. Polybar Config Awesome WM\n"
+    printf "8. Edit Hyprland Config\n"
 }
 open(){
     kitty -e nvim $1
 }
-choice=$(menu | dmenu -l 6 -i -p "Choose an option")
-# choice=$(menu | rofi -dmenu  -p "Choose an option" -font 'Fira Code 20')
+# choice=$(menu | dmenu -l 6 -i -p "Choose an option")
+choice=$(menu | rofi -dmenu  -i -p "Choose an option" -font 'Fira Code 20')
 if [ "$choice" = "1. Open Notes " ]; then
     open $HOME/Downloads/vimwiki/index.wiki
 elif [ "$choice" = "2. Open Screenshot folder" ]; then
     sxiv $HOME/Downloads/Pictures/
 elif [ "$choice" = "3. Open awesomewm config" ]; then
-    open $HOME/.config/awesome/rc.lua
+    cd $HOME/.config/awesome
+    open rc.lua
 elif [ "$choice" = "4. Open Xinitrc " ]; then
     open $HOME/.config/X11/xinitrc
 elif [[ "$choice" = "0. Edit This Menu" ]]; then
@@ -30,6 +32,9 @@ elif [[ "$choice" = "6. Open Wallpaper Folder" ]]; then
     sxiv $HOME/Downloads/tmpWall/*
 elif [[ "$choice" = "7. Polybar Config Awesome WM"  ]]; then
     open /home/root99/.config/polybar.old/config_awesome
+elif [[ "$choice" = "8. Edit Hyprland Config"  ]]; then
+    cd $HOME/.config/hypr/
+    open /home/root99/.config/hypr/hyprland.conf
 fi
 else
     exit
