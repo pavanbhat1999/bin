@@ -2,7 +2,8 @@
 
 
 notification(){
-	notify-send "Playing now: " "$@" --icon=media-tape
+	# notify-send "Playing now: " "$@" --icon=media-tape
+    echo "test"
 }
 
 menu(){
@@ -13,12 +14,12 @@ menu(){
 }
 
 main() {
-	choice=$(menu | rofi -dmenu | cut -d. -f1)
+	choice=$(menu | rofi -i -dmenu | cut -d. -f1)
 
 	case $choice in
         0)
             notification "Sleeping in 10 seconds"
-            sleep 10
+            # sleep 10
             systemctl suspend
             break
             ;;
@@ -36,7 +37,7 @@ main() {
 			;;
 		3)
             notification " Locking in  5 seconds";
-            sleep 5;
+            # sleep 5;
             # i3lock-fancy;
             my-lock-screen.sh
 			break
