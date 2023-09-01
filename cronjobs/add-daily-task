@@ -8,6 +8,5 @@ fi
 values(){
     printf "30 minutes CS50 course\n"
     printf "30 minutes Trailhead\n"
-    printf "30 Development\n"
 }
 values > $HOME/.cache/daily-todo.txt
