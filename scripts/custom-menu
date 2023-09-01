@@ -9,6 +9,7 @@ menu () {
     printf "6. Open Wallpaper Folder\n"
     printf "7. Polybar Config Awesome WM\n"
     printf "8. Edit Hyprland Config\n"
+    printf "9. Edit nixos Config\n"
 }
 open(){
     kitty -e nvim $1
@@ -35,6 +36,9 @@ elif [[ "$choice" = "7. Polybar Config Awesome WM"  ]]; then
 elif [[ "$choice" = "8. Edit Hyprland Config"  ]]; then
     cd $HOME/.config/hypr/
     open /home/root99/.config/hypr/hyprland.conf
+elif [[ "$choice" = "9. Edit nixos Config"  ]]; then
+    cd /etc/nixos/
+    open configuration.nix
 fi
 else
     exit
