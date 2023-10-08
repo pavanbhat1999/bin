@@ -5,7 +5,7 @@ menu () {
     printf "2. Open Screenshot folder\n"
     printf "3. Open awesomewm config\n"
     printf "4. Open Xinitrc \n"
-    printf "5. Open Cs50 course in mpv\n"
+    printf "5. Nothing\n"
     printf "6. Open Wallpaper Folder\n"
     printf "7. Polybar Config Awesome WM\n"
     printf "8. Edit Hyprland Config\n"
@@ -28,7 +28,7 @@ elif [ "$choice" = "4. Open Xinitrc " ]; then
 elif [[ "$choice" = "0. Edit This Menu" ]]; then
     open /home/root99/bin/scripts/custom-menu
 elif [[ "$choice" = "5. Open Cs50 course in mpv" ]]; then
-    mpv $HOME/Downloads/Video/*
+    echo "nothing"
 elif [[ "$choice" = "6. Open Wallpaper Folder" ]]; then
     sxiv $HOME/Downloads/tmpWall/*
 elif [[ "$choice" = "7. Polybar Config Awesome WM"  ]]; then
