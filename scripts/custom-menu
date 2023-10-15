@@ -12,7 +12,7 @@ menu () {
     printf "9. Edit nixos Config\n"
 }
 open(){
-    kitty -e nvim $1
+    foot -e nvim $1
 }
 # choice=$(menu | dmenu -l 6 -i -p "Choose an option")
 choice=$(menu | rofi -dmenu  -i -p "Choose an option" -font 'Fira Code 20')
