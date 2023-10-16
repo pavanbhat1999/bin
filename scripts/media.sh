@@ -25,7 +25,7 @@
 # saves covers here
 Cover=/tmp/cover.png
 # if cover not found in metadata use this instead
-bkpCover=~/.config/bspwm/assets/fallback.webp
+bkpCover=/home/root99/Downloads/tmpWall/goku's.jpg
 
 # ┌─┐┬  ┌─┐┬ ┬┌─┐┬─┐┌─┐┌┬┐┬    ┌─┐┌─┐┬─┐┬┌─┐┌┬┐┌─┐
 # ├─┘│  ├─┤└┬┘├┤ ├┬┘│   │ │    └─┐│  ├┬┘│├─┘ │ └─┐
